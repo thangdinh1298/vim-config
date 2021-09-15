@@ -1,3 +1,10 @@
+"space and tab
+"numbeG of visual spaces per tab"
+set tabstop=4
+
+"number of spaces when editing
+set softtabstop=4
+
 "size of indent
 set shiftwidth=4
 
@@ -8,6 +15,9 @@ set cursorline
 
 set number
 set relativenumber
+
+"Allow backspaces in insert mode
+set backspace=indent,eol,start
 
 "seaching
 set incsearch
@@ -56,8 +66,22 @@ Plug 'junegunn/fzf.vim'
 Plug 'hotwatermorning/auto-git-diff'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
+Plug 'lambdalisue/fern.vim'
 call plug#end()
 
-" For Termdebug vim 8.1 and above
+"Termdebug
 let g:termdebugger='/home/thangdd/usr/local/bin/gdb'
 let g:termdebug_wide=1
+
+"Fern
+nmap F :Fern . -drawer -toggle<CR>
+function! s:init_fern() abort
+    nmap <buffer> H <Plug>(fern-action-open:split)
+    nmap <buffer> V <Plug>(fern-action-open:vsplit)
+    nmap <buffer> S <Plug>(fern-action-hidden:toggle)
+endfunction
+
+augroup fern-custom
+  autocmd! *
+  autocmd FileType fern call s:init_fern()
+augroup END
