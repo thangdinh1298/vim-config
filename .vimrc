@@ -79,6 +79,7 @@ function! s:init_fern() abort
     nmap <buffer> H <Plug>(fern-action-open:split)
     nmap <buffer> V <Plug>(fern-action-open:vsplit)
     nmap <buffer> S <Plug>(fern-action-hidden:toggle)
+    nmap <buffer> <Plug>(fern-action-expand) <Plug>(fern-action-expand:stay)
 endfunction
 
 augroup fern-custom
