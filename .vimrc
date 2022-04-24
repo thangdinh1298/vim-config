@@ -65,7 +65,7 @@ let g:rustfmt_autosave = 1
 
 "Ale
 noremap gd :ALEGoToDefinition<cr>
-noremap if :ALEHover<cr>
+noremap <leader>h :ALEHover<cr>
 let g:ale_linters = {'rust': ['analyzer']}
 let g:ale_completion_enabled = 1
 let g:ale_floating_preview = 1
