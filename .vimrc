@@ -60,6 +60,16 @@ nnoremap <silent><A-O> :set paste<CR>O<Esc>:set nopaste<CR>
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>F :Ag<cr>
 
+"Rust.vim
+let g:rustfmt_autosave = 1
+
+"Ale
+noremap gd :ALEGoToDefinition<cr>
+noremap if :ALEHover<cr>
+let g:ale_linters = {'rust': ['analyzer']}
+let g:ale_completion_enabled = 1
+let g:ale_floating_preview = 1
+
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -67,6 +77,8 @@ Plug 'hotwatermorning/auto-git-diff'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'lambdalisue/fern.vim'
+Plug 'rust-lang/rust.vim'
+Plug 'dense-analysis/ale'
 call plug#end()
 
 "Termdebug
